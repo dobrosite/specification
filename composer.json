@@ -3,8 +3,8 @@
     "description": "Specification pattern for PHP",
     "type": "library",
     "keywords": [
-        "specification",
-        "spec"
+        "spec",
+        "specification"
     ],
     "license": "MIT",
     "authors": [
@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "DobroSite\\Specification\\": "tests"
+            "DobroSite\\Specification\\Tests\\": "tests"
         }
     }
 }
