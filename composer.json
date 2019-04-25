@@ -1,0 +1,36 @@
+{
+    "name": "dobrosite/specification",
+    "description": "Specification pattern for PHP",
+    "type": "library",
+    "keywords": [
+        "specification",
+        "spec"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Михаил Красильников",
+            "email": "m.krasilniov@dobro.site"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DobroSite\\Specification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DobroSite\\Specification\\": "tests"
+        }
+    }
+}
