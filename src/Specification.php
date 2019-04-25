@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace DobroSite\Specification;
 
 /**
@@ -21,5 +19,5 @@ interface Specification
      *
      * @since 1.0
      */
-    public function isSatisfiedBy($candidate): bool;
+    public function isSatisfiedBy($candidate);
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Domain\Specification;
 
 namespace DobroSite\Specification;
@@ -49,7 +47,7 @@ final class AllOf implements Specification
 
         array_walk(
             $specifications,
-            static function ($element, $index): void {
+            static function ($element, $index) {
                 if ($element instanceof Specification) {
                     return;
                 }
@@ -75,7 +73,7 @@ final class AllOf implements Specification
      *
      * @since 1.0
      */
-    public function getSpecifications(): array
+    public function getSpecifications()
     {
         return $this->specifications;
     }
@@ -89,7 +87,7 @@ final class AllOf implements Specification
      *
      * @since 1.0
      */
-    public function isSatisfiedBy($candidate): bool
+    public function isSatisfiedBy($candidate)
     {
         foreach ($this->specifications as $specification) {
             if (!$specification->isSatisfiedBy($candidate)) {
