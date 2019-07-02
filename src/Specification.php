@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DobroSite\Specification;
 
 /**
@@ -13,11 +15,13 @@ interface Specification
     /**
      * Возвращает true, если переданный кандидат удовлетворяет спецификации.
      *
+     * Реализации должны возвращать false если передан кандидат неподдерживаемого типа.
+     *
      * @param mixed $candidate
      *
      * @return bool
      *
      * @since 1.0
      */
-    public function isSatisfiedBy($candidate);
+    public function isSatisfiedBy($candidate): bool;
 }

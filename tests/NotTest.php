@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DobroSite\Specification\Tests;
 
 use DobroSite\Specification\Not;
@@ -16,7 +18,7 @@ class NotTest extends TestCase
     /**
      * Проверяет что спецификация не удовлетворена, если удовлетворена вложенная спецификация.
      */
-    public function testNotSatisfiedIfNestedSpecSatisfied()
+    public function testNotSatisfiedIfNestedSpecSatisfied(): void
     {
         $candidate = new \stdClass();
 
@@ -35,7 +37,7 @@ class NotTest extends TestCase
     /**
      * Проверяет что возвращается вложенная спецификация.
      */
-    public function testReturnNestedSpec()
+    public function testReturnNestedSpec(): void
     {
         $nestedSpec = $this->createMock(Specification::class);
 
@@ -47,7 +49,7 @@ class NotTest extends TestCase
     /**
      * Проверяет что для спецификация удовлетворена, если не удовлетворена вложенная спецификация.
      */
-    public function testSatisfiedIfNestedSpecNotSatisfied()
+    public function testSatisfiedIfNestedSpecNotSatisfied(): void
     {
         $candidate = new \stdClass();
 

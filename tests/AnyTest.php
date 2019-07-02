@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DobroSite\Specification\Tests;
 
 use DobroSite\Specification\AnyOf;
@@ -16,7 +18,7 @@ class AnyTest extends TestCase
     /**
      * Проверяет что конструктор принимает только объекты.
      */
-    public function testConstructorAcceptOnlyObjects()
+    public function testConstructorAcceptOnlyObjects(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -32,7 +34,7 @@ class AnyTest extends TestCase
     /**
      * Проверяет что конструктор принимает только объекты с интерфейсом Specification.
      */
-    public function testConstructorAcceptOnlyObjectsWithSpecification()
+    public function testConstructorAcceptOnlyObjectsWithSpecification(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(
@@ -49,7 +51,7 @@ class AnyTest extends TestCase
      * Проверяет что спецификация не удовлетворена, если не удовлетворена ни одна вложенная
      * спецификация.
      */
-    public function testNotSatisfiedIfNoNestedSpecSatisfied()
+    public function testNotSatisfiedIfNoNestedSpecSatisfied(): void
     {
         $entity = new \stdClass();
 
@@ -75,7 +77,7 @@ class AnyTest extends TestCase
     /**
      * Проверяет что возвращаются все вложенные спецификации.
      */
-    public function testReturnAllNestedSpecs()
+    public function testReturnAllNestedSpecs(): void
     {
         $nestedSpec1 = $this->createMock(Specification::class);
         $nestedSpec2 = $this->createMock(Specification::class);
@@ -89,7 +91,7 @@ class AnyTest extends TestCase
      * Проверяет что для спецификация удовлетворена, если удовлетворена хотя бы одна вложенная
      * спецификация.
      */
-    public function testSatisfiedIfAtLeastOnceNestedSpecSatisfied()
+    public function testSatisfiedIfAtLeastOnceNestedSpecSatisfied(): void
     {
         $entity = new \stdClass();
 

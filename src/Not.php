@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DobroSite\Specification;
 
 /**
@@ -35,7 +37,7 @@ final class Not implements Specification
      *
      * @since 1.0
      */
-    public function getSpecification()
+    public function getSpecification(): Specification
     {
         return $this->specification;
     }
@@ -49,7 +51,7 @@ final class Not implements Specification
      *
      * @since 1.0
      */
-    public function isSatisfiedBy($candidate)
+    public function isSatisfiedBy($candidate): bool
     {
         return !$this->specification->isSatisfiedBy($candidate);
     }

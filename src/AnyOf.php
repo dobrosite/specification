@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DobroSite\Specification;
 
 /**
@@ -71,7 +73,7 @@ final class AnyOf implements Specification
      *
      * @since 1.0
      */
-    public function getSpecifications()
+    public function getSpecifications(): array
     {
         return $this->specifications;
     }
@@ -85,7 +87,7 @@ final class AnyOf implements Specification
      *
      * @since 1.0
      */
-    public function isSatisfiedBy($candidate)
+    public function isSatisfiedBy($candidate): bool
     {
         foreach ($this->specifications as $specification) {
             if ($specification->isSatisfiedBy($candidate)) {
