@@ -2,14 +2,18 @@
 
 declare(strict_types=1);
 
-namespace DobroSite\Specification;
+namespace DobroSite\Specification\Logical;
+
+use DobroSite\Specification\CompositeSpecification;
+use DobroSite\Specification\Specification;
 
 /**
  * Спецификация «НЕ».
  *
+ * @since 2.0 находится в пространстве Logical.
  * @since 1.0
  */
-final class Not implements Specification
+final class Not implements CompositeSpecification
 {
     /**
      * Отрицаемая спецификация.
@@ -33,13 +37,13 @@ final class Not implements Specification
     /**
      * Возвращает отрицаемую спецификацию.
      *
-     * @return Specification
+     * @return Specification[]
      *
-     * @since 1.0
+     * @since 2.0
      */
-    public function getSpecification(): Specification
+    public function getSpecifications(): array
     {
-        return $this->specification;
+        return [$this->specification];
     }
 
     /**

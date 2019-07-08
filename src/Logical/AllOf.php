@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DobroSite\Specification;
+namespace DobroSite\Specification\Logical;
+
+use DobroSite\Specification\CompositeSpecification;
+use DobroSite\Specification\Specification;
 
 /**
  * Спецификация «И» («все»).
@@ -15,9 +18,10 @@ namespace DobroSite\Specification;
  * new AllOf($spec1, $spec2, $spec3, ...)
  * ```
  *
+ * @since 2.0 находится в пространстве Logical.
  * @since 1.0
  */
-final class AllOf implements Specification
+final class AllOf implements CompositeSpecification
 {
     /**
      * Вложенные спецификации.

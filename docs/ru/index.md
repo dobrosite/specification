@@ -1,21 +1,19 @@
 # Шаблон «Спецификация» для PHP
 
-Сердцем библиотеки является интерфейс [Specification](../../src/Specification.php), который
-предоставляет всего один метод — `isSatisfiedBy`, принимающий на входе произвольное значение и
-возвращающий true, если это значение удовлетворяет спецификации.
+Библиотека разрабатывается как основа для создания и применения спецификаций в приложениях на PHP.
+Подробнее о спецификациях:
 
-## Фильтрация по спецификации
+- [Спецификации](https://www.martinfowler.com/apsupp/spec.pdf), Эрик Эванс, Мартин Фаулер.
 
-```php
-<?php
+В отличие от [RulerZ](https://github.com/K-Phoen/rulerz/) в этой библиотеке не используется DSL
+(хотя это и возможно сделать при помощи [трансляторов](handlers.md)). Упор сделан на отделение
+логики предметной области от какой бы то ни было инфраструктурной реализации, даже ценой увеличения
+затрат на добавление новых спецификаций.
 
-/** @var Foo[] $candidates */
-/** @var \DobroSite\Specification\Specification $specification */
+- [Написание спецификаций](specifications.md)
+- [Прямое использование спецификаций](usage.md)
+- [Обработчики спецификаций](handlers.md)
 
-$filtered = array_map(
-    static function (Foo $candidate) use ($specification) {
-        return $specification->isSatisfiedBy($candidate);
-    },
-    $candidates
-);
-```
+## Расширения
+
+- [Поддержка спецификаций для Doctrine](https://github.com/dobrosite/specification-doctrine)

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DobroSite\Specification\Tests;
+namespace DobroSite\Specification\Tests\Unit\Logical;
 
-use DobroSite\Specification\Not;
+use DobroSite\Specification\Logical\Not;
 use DobroSite\Specification\Specification;
 use PHPUnit\Framework\TestCase;
 
@@ -43,7 +43,7 @@ class NotTest extends TestCase
 
         $specification = new Not($nestedSpec);
 
-        self::assertSame($nestedSpec, $specification->getSpecification());
+        self::assertSame($nestedSpec, $specification->getSpecifications()[0]);
     }
 
     /**

@@ -2,23 +2,21 @@
 
 declare(strict_types=1);
 
-namespace DobroSite\Specification\Tests;
+namespace DobroSite\Specification\Tests\Unit\Logical;
 
-use DobroSite\Specification\AllOf;
+use DobroSite\Specification\Logical\AnyOf;
 use DobroSite\Specification\Specification;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Модульные тесты спецификации «И» («все»).
+ * Модульные тесты спецификации «ИЛИ» («любой»).
  *
- * @covers \DobroSite\Specification\AllOf
+ * @covers \DobroSite\Specification\AnyOf
  */
-class AllOfTest extends TestCase
+class AnyTest extends TestCase
 {
     /**
      * Проверяет что конструктор принимает только объекты.
-     *
-     * @throws \Exception
      */
     public function testConstructorAcceptOnlyObjects(): void
     {
@@ -30,7 +28,7 @@ class AllOfTest extends TestCase
             )
         );
 
-        new AllOf($this->createMock(Specification::class), 123);
+        new AnyOf($this->createMock(Specification::class), 123);
     }
 
     /**
@@ -46,34 +44,34 @@ class AllOfTest extends TestCase
             )
         );
 
-        new AllOf($this->createMock(Specification::class), new \stdClass());
+        new AnyOf($this->createMock(Specification::class), new \stdClass());
     }
 
     /**
-     * Проверяет что спецификация не удовлетворена, если не удовлетворена хотя бы одна вложенная
+     * Проверяет что спецификация не удовлетворена, если не удовлетворена ни одна вложенная
      * спецификация.
      */
-    public function testNotSatisfiedIfAtLeastOneNestedSpecNotSatisfied(): void
+    public function testNotSatisfiedIfNoNestedSpecSatisfied(): void
     {
-        $candidate = new \stdClass();
+        $entity = new \stdClass();
 
         $nestedSpec1 = $this->createMock(Specification::class);
         $nestedSpec1
             ->expects(self::atLeastOnce())
             ->method('isSatisfiedBy')
-            ->with(self::equalTo($candidate))
-            ->willReturn(true);
+            ->with(self::equalTo($entity))
+            ->willReturn(false);
 
         $nestedSpec2 = $this->createMock(Specification::class);
         $nestedSpec2
             ->expects(self::atLeastOnce())
             ->method('isSatisfiedBy')
-            ->with(static::equalTo($candidate))
+            ->with(self::equalTo($entity))
             ->willReturn(false);
 
-        $specification = new AllOf($nestedSpec1, $nestedSpec2);
+        $specification = new AnyOf($nestedSpec1, $nestedSpec2);
 
-        self::assertFalse($specification->isSatisfiedBy($candidate));
+        self::assertFalse($specification->isSatisfiedBy($entity));
     }
 
     /**
@@ -84,34 +82,35 @@ class AllOfTest extends TestCase
         $nestedSpec1 = $this->createMock(Specification::class);
         $nestedSpec2 = $this->createMock(Specification::class);
 
-        $specification = new AllOf($nestedSpec1, $nestedSpec2);
+        $specification = new AnyOf($nestedSpec1, $nestedSpec2);
 
         self::assertSame([$nestedSpec1, $nestedSpec2], $specification->getSpecifications());
     }
 
     /**
-     * Проверяет что для спецификация удовлетворена, если удовлетворены все вложенные спецификации.
+     * Проверяет что для спецификация удовлетворена, если удовлетворена хотя бы одна вложенная
+     * спецификация.
      */
-    public function testSatisfiedIfAllNestedSpecsSatisfied(): void
+    public function testSatisfiedIfAtLeastOnceNestedSpecSatisfied(): void
     {
-        $candidate = new \stdClass();
+        $entity = new \stdClass();
 
         $nestedSpec1 = $this->createMock(Specification::class);
         $nestedSpec1
             ->expects(self::atLeastOnce())
             ->method('isSatisfiedBy')
-            ->with(self::equalTo($candidate))
-            ->willReturn(true);
+            ->with(self::equalTo($entity))
+            ->willReturn(false);
 
         $nestedSpec2 = $this->createMock(Specification::class);
         $nestedSpec2
             ->expects(self::atLeastOnce())
             ->method('isSatisfiedBy')
-            ->with(self::equalTo($candidate))
+            ->with(self::equalTo($entity))
             ->willReturn(true);
 
-        $specification = new AllOf($nestedSpec1, $nestedSpec2);
+        $specification = new AnyOf($nestedSpec1, $nestedSpec2);
 
-        self::assertTrue($specification->isSatisfiedBy($candidate));
+        self::assertTrue($specification->isSatisfiedBy($entity));
     }
 }
