@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Модульные тесты спецификации «НЕ».
  *
- * @covers \DobroSite\Specification\Not
+ * @covers \DobroSite\Specification\Logical\Not
  */
 class NotTest extends TestCase
 {

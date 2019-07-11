@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Модульные тесты спецификации «И» («все»).
  *
- * @covers \DobroSite\Specification\AllOf
+ * @covers \DobroSite\Specification\Logical\AllOf
  */
 class AllOfTest extends TestCase
 {

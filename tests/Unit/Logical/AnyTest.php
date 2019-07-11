@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Модульные тесты спецификации «ИЛИ» («любой»).
  *
- * @covers \DobroSite\Specification\AnyOf
+ * @covers \DobroSite\Specification\Logical\AnyOf
  */
 class AnyTest extends TestCase
 {
