@@ -114,8 +114,8 @@ use Domain\Entity\Commodity;
 use Domain\Entity\Specification\Commodity as CommoditySpecs;
 
 $spec = new Logical\AllOf(
-    new CommoditySpecs/Published(),
-    new CommoditySpecs/StocksGreaterThan(100)
+    new CommoditySpecs\Published(),
+    new CommoditySpecs\StocksGreaterThan(100)
 );
 
 $commodity = new Commodity();
