@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace DobroSite\Specification\Tests\Unit\Handler;
 
 use DobroSite\Specification\Exception\Handler\NoMatchingHandlerException;
-use DobroSite\Specification\Exception\Handler\UnsupportedSpecificationException;
 use DobroSite\Specification\Handler\BasicHandlerRegistry;
 use DobroSite\Specification\Handler\Handler;
 use DobroSite\Specification\Tests\Unit\Handler\Fixture\Handler\FakeSpec1GenericHandler;
@@ -26,7 +25,7 @@ class BasicHandlerRegistryTest extends TestCase
      *
      * @throws \Exception
      */
-    public function testReturnsGenericHandler(): void
+    public function testReturnGenericHandler(): void
     {
         $handler1 = new FakeSpec1GenericHandler();
         $handler2 = new FakeSpec2GenericHandler();
@@ -46,7 +45,7 @@ class BasicHandlerRegistryTest extends TestCase
      *
      * @throws \Exception
      */
-    public function testReturnsHandlerWithInterfaces(): void
+    public function testReturnHandlerWithInterfaces(): void
     {
         $handler1 = new FakeSpec1GenericHandler();
         $handler2 = new FakeSpec2GenericHandler();
@@ -68,7 +67,7 @@ class BasicHandlerRegistryTest extends TestCase
      *
      * @throws \Exception
      */
-    public function testThrowsExceptionIfNoHandlerAvailableForSpecification(): void
+    public function testThrowExceptionIfNoHandlerAvailableForSpecification(): void
     {
         $handler1 = $this->createConfiguredMock(
             Handler::class,
@@ -92,13 +91,12 @@ class BasicHandlerRegistryTest extends TestCase
         $registry->getHandlerFor($spec);
     }
 
-
     /**
      * Проверяет вбрасывание исключения при отсутствии обработчиков с нужными интерфейсами.
      *
      * @throws \Exception
      */
-    public function testThrowsExceptionIfNoHandlerWithRequiredInterfaces(): void
+    public function testThrowExceptionIfNoHandlerWithRequiredInterfaces(): void
     {
         $handler1 = new FakeSpec1GenericHandler();
         $handler2 = new FakeSpec2GenericHandler();

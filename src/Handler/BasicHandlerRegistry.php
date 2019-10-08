@@ -43,6 +43,8 @@ class BasicHandlerRegistry implements HandlerRegistry
             throw new NoMatchingHandlerException($specification);
         }
 
+        // Если нет требований к наличию определённых интерфейсов, возвращаем первый
+        // попавшийся обработчик.
         if (count($requiredInterfaces) === 0) {
             return reset($this->handlers[$group]);
         }
@@ -52,10 +54,6 @@ class BasicHandlerRegistry implements HandlerRegistry
 
         foreach ($this->handlers[$group] as $handler) {
             $actualInterfaces = class_implements($handler, false);
-            if ($actualInterfaces === false) {
-                continue;
-            }
-
             $implementedInterfaces = array_intersect($requiredInterfaces, $actualInterfaces);
             if (count($implementedInterfaces) === count($requiredInterfaces)) {
                 return $handler;
