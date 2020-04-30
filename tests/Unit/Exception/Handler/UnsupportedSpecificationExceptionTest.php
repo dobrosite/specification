@@ -37,6 +37,7 @@ class UnsupportedSpecificationExceptionTest extends TestCase
         );
 
         if (method_exists(self::class, 'assertMatchesRegularExpression')) {
+            // @phpstan-ignore-next-line
             self::assertMatchesRegularExpression($regexp, $exception->getMessage());
         } else {
             // TODO Удалить ветку после перехода на PHPUnit 9.0.
