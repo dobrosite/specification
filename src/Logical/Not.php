@@ -10,10 +10,11 @@ use DobroSite\Specification\Specification;
 /**
  * Спецификация «НЕ».
  *
- * @since 2.0 находится в пространстве Logical.
+ * @since x.x Класс больше не является окончательным.
+ * @since 2.0 Перемещено в пространство Logical.
  * @since 1.0
  */
-final class Not implements CompositeSpecification
+class Not implements CompositeSpecification
 {
     /**
      * Отрицаемая спецификация.

@@ -18,10 +18,11 @@ use DobroSite\Specification\Specification;
  * new AllOf($spec1, $spec2, $spec3, ...)
  * ```
  *
- * @since 2.0 находится в пространстве Logical.
+ * @since x.x Класс больше не является окончательным.
+ * @since 2.0 Перемещено в пространство Logical.
  * @since 1.0
  */
-final class AllOf implements CompositeSpecification
+class AllOf implements CompositeSpecification
 {
     /**
      * Вложенные спецификации.

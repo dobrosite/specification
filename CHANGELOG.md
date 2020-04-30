@@ -7,6 +7,7 @@
 
 ### Изменено
 
+- Классы `AllOf`, `AnyOf` и `Not` больше не являются окончательными. 
 - `Translator::translate` теперь может выбрасывать исключение `NoMatchingHandlerException`.
 
 
