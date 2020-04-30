@@ -5,6 +5,10 @@
 
 ## Не выпущено
 
+### Изменено
+
+- `Translator::translate` теперь может выбрасывать исключение `NoMatchingHandlerException`.
+
 
 ## 2.1.0 - 30.04.2020
 
