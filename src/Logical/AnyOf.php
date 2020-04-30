@@ -36,7 +36,7 @@ class AnyOf implements CompositeSpecification
      *
      * @param Specification ...$specifications Вложенные спецификации.
      *
-     * @since x.x Может принимать одну спецификацию.
+     * @since 2.3 Может принимать одну спецификацию.
      * @since 1.0
      */
     public function __construct(...$specifications)
