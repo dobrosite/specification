@@ -35,6 +35,12 @@ class UnsupportedSpecificationExceptionTest extends TestCase
             '/^Mock_\S+ supports only FooSpec specifications, but %s given\.$/',
             preg_quote(SimpleString::class, '/')
         );
-        self::assertMatchesRegularExpression($regexp, $exception->getMessage());
+
+        if (method_exists(self::class, 'assertMatchesRegularExpression')) {
+            self::assertMatchesRegularExpression($regexp, $exception->getMessage());
+        } else {
+            // TODO Удалить ветку после перехода на PHPUnit 9.0.
+            self::assertRegExp($regexp, $exception->getMessage());
+        }
     }
 }
