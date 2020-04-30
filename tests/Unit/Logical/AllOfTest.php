@@ -50,6 +50,22 @@ class AllOfTest extends TestCase
     }
 
     /**
+     * Проверяет что конструктор требует хотя бы одну спецификацию.
+     */
+    public function testConstructorRequiresAtLeastOneSpecification(): void
+    {
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessage(
+            sprintf(
+                '%s::__construct requires at least one specification.',
+                AllOf::class
+            )
+        );
+
+        new AllOf();
+    }
+
+    /**
      * Проверяет что спецификация не удовлетворена, если не удовлетворена хотя бы одна вложенная
      * спецификация.
      */

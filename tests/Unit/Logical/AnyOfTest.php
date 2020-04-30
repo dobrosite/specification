@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Logical\AnyOf
  */
-class AnyTest extends TestCase
+class AnyOfTest extends TestCase
 {
     /**
      * Проверяет что конструктор принимает только объекты.
@@ -45,6 +45,22 @@ class AnyTest extends TestCase
         );
 
         new AnyOf($this->createMock(Specification::class), new \stdClass());
+    }
+
+    /**
+     * Проверяет что конструктор требует хотя бы одну спецификацию.
+     */
+    public function testConstructorRequiresAtLeastOneSpecification(): void
+    {
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessage(
+            sprintf(
+                '%s::__construct requires at least one specification.',
+                AnyOf::class
+            )
+        );
+
+        new AnyOf();
     }
 
     /**

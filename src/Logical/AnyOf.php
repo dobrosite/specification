@@ -18,7 +18,7 @@ use DobroSite\Specification\Specification;
  * new AnyOf($spec1, $spec2, $spec3, ...)
  * ```
  *
- * @since x.x Класс больше не является окончательным.
+ * @since 2.2 Класс больше не является окончательным.
  * @since 2.0 Перемещено в пространство Logical.
  * @since 1.0
  */
@@ -36,16 +36,16 @@ class AnyOf implements CompositeSpecification
      *
      * @param Specification ...$specifications Вложенные спецификации.
      *
+     * @since x.x Может принимать одну спецификацию.
      * @since 1.0
      */
     public function __construct(...$specifications)
     {
-        if (count($specifications) < 2) {
+        if (count($specifications) < 1) {
             throw new \LogicException(
                 sprintf(
-                    '%s required at least 2 specifications, but %d given.',
-                    __METHOD__,
-                    count($specifications)
+                    '%s requires at least one specification.',
+                    __METHOD__
                 )
             );
         }
