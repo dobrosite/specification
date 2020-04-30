@@ -18,7 +18,7 @@ class UnsupportedSpecificationException extends \LogicException
      * Создаёт исключение.
      *
      * @param Specification $specification Обрабатываемая спецификация.
-     * @param Handler       $handler       Обработчик, который не смог обработать спецификацию
+     * @param Handler       $handler       Обработчик, который не смог обработать спецификацию.
      *
      * @since 2.0
      */

@@ -35,6 +35,6 @@ class UnsupportedSpecificationExceptionTest extends TestCase
             '/^Mock_\S+ supports only FooSpec specifications, but %s given\.$/',
             preg_quote(SimpleString::class, '/')
         );
-        self::assertRegExp($regexp, $exception->getMessage());
+        self::assertMatchesRegularExpression($regexp, $exception->getMessage());
     }
 }

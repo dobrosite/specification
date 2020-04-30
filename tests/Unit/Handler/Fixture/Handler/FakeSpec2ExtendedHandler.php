@@ -9,8 +9,9 @@ use DobroSite\Specification\Tests\Unit\Handler\Fixture\Specification\FakeSpec1;
 
 class FakeSpec2ExtendedHandler implements Handler, \Countable
 {
-    public function count()
+    public function count(): int
     {
+        return 0;
     }
 
     public function getSpecificationClassName(): string

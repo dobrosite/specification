@@ -55,7 +55,7 @@ final class DebugTranslator implements Translator
      *
      * @param Specification $specification
      *
-     * @return \Generator
+     * @return \Generator<string>
      */
     private function getGetters(Specification $specification): \Generator
     {

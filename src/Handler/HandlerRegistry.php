@@ -19,9 +19,10 @@ interface HandlerRegistry
     /**
      * Возвращает обработчик для указанной спецификации.
      *
-     * @param Specification $specification      Спецификация, для которой запрашивает разработчик.
-     * @param string[]      $requiredInterfaces Список дополнительных интерфейсов, которые должен
-     *                                          поддерживать обработчик.
+     * @param Specification      $specification      Спецификация, для которой запрашивает
+     *                                               разработчик.
+     * @param array<int, string> $requiredInterfaces Список дополнительных интерфейсов, которые
+     *                                               должен поддерживать обработчик.
      *
      * @return Handler
      *

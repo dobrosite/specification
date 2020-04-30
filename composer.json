@@ -18,13 +18,13 @@
         "sort-packages": true
     },
     "require": {
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "require-dev": {
-        "phpstan/extension-installer": "^1.0",
-        "phpstan/phpstan": "^0.11.16",
-        "phpstan/phpstan-phpunit": "^0.11.2",
-        "phpunit/phpunit": "^7.0"
+        "phpstan/extension-installer": "^1.0.4",
+        "phpstan/phpstan": "^0.12.19",
+        "phpstan/phpstan-phpunit": "^0.12.8",
+        "phpunit/phpunit": "^9.1"
     },
     "autoload": {
         "psr-4": {

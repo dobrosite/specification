@@ -8,3 +8,7 @@
 
 - [Документация](docs/ru/index.md)
 - [Documentation](docs/en/index.md)
+
+---
+
+- [Doctrine](https://github.com/dobrosite/specification-doctrine)

@@ -16,8 +16,8 @@ class NoMatchingHandlerException extends \LogicException
     /**
      * Создаёт исключение.
      *
-     * @param Specification $specification      Обрабатываемая спецификация.
-     * @param string[]      $requiredInterfaces Список запрошенных интерфейсов.
+     * @param Specification      $specification      Обрабатываемая спецификация.
+     * @param array<int, string> $requiredInterfaces Список запрошенных интерфейсов.
      *
      * @since 2.0
      */
