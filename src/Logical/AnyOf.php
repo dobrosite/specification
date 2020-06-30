@@ -8,7 +8,7 @@ use DobroSite\Specification\CompositeSpecification;
 use DobroSite\Specification\Specification;
 
 /**
- * Спецификация «ИЛИ» («любой»).
+ * Спецификация «ИЛИ» («любой из»).
  *
  * Требует соответствия сущности хотя бы одной вложенной спецификации.
  *

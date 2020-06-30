@@ -9,7 +9,7 @@ use DobroSite\Specification\Specification;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Модульные тесты спецификации «ИЛИ» («любой»).
+ * Модульные тесты спецификации «ИЛИ» («любой из»).
  *
  * @covers \DobroSite\Specification\Logical\AnyOf
  */
