@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Handler\CompositeHandlerRegistry
  */
-class CompositeHandlerRegistryTest extends TestCase
+final class CompositeHandlerRegistryTest extends TestCase
 {
     /**
      * Проверяет нахождение подходящего обработчика.

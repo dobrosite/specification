@@ -21,7 +21,7 @@ class CompositeHandlerRegistry implements HandlerRegistry
      *
      * @var HandlerRegistry[]
      */
-    private $registries = [];
+    private array $registries = [];
 
     /**
      * Добавляет новый реестр.

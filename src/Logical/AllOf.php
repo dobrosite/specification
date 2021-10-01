@@ -29,7 +29,7 @@ class AllOf implements CompositeSpecification
      *
      * @var Specification[]
      */
-    private $specifications;
+    private array $specifications;
 
     /**
      * Создаёт спецификацию.

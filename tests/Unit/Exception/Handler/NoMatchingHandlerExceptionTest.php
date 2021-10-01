@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace DobroSite\Specification\Tests\Unit\Exception\Handler;
 
-use DobroSite\Specification\CompositeSpecification;
 use DobroSite\Specification\Exception\Handler\NoMatchingHandlerException;
 use DobroSite\Specification\Handler\Handler;
 use DobroSite\Specification\Handler\HandlerRegistry;
-use DobroSite\Specification\Specification;
 use DobroSite\Specification\Tests\Fixture\Specification\SimpleString;
 use PHPUnit\Framework\TestCase;
 
@@ -17,24 +15,8 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Exception\Handler\NoMatchingHandlerException
  */
-class NoMatchingHandlerExceptionTest extends TestCase
+final class NoMatchingHandlerExceptionTest extends TestCase
 {
-    /**
-     * Проверяет создание исключения без указания интерфейсов.
-     *
-     * @throws \Throwable
-     */
-    public function testWithoutInterfaces(): void
-    {
-        $spec = new SimpleString('foo');
-        $exception = new NoMatchingHandlerException($spec);
-
-        self::assertEquals(
-            sprintf('No handlers found for specification %s.', SimpleString::class),
-            $exception->getMessage()
-        );
-    }
-
     /**
      * Проверяет создание исключения с указанием интерфейсов.
      *
@@ -55,6 +37,22 @@ class NoMatchingHandlerExceptionTest extends TestCase
                 HandlerRegistry::class,
                 SimpleString::class
             ),
+            $exception->getMessage()
+        );
+    }
+
+    /**
+     * Проверяет создание исключения без указания интерфейсов.
+     *
+     * @throws \Throwable
+     */
+    public function testWithoutInterfaces(): void
+    {
+        $spec = new SimpleString('foo');
+        $exception = new NoMatchingHandlerException($spec);
+
+        self::assertEquals(
+            sprintf('No handlers found for specification %s.', SimpleString::class),
             $exception->getMessage()
         );
     }

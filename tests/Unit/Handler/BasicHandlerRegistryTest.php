@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Handler\BasicHandlerRegistry
  */
-class BasicHandlerRegistryTest extends TestCase
+final class BasicHandlerRegistryTest extends TestCase
 {
     /**
      * Проверяет успешное получение обработчика.

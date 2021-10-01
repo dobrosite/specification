@@ -19,15 +19,14 @@ class BasicHandlerRegistry implements HandlerRegistry
      *
      * @var Handler[][]
      */
-    private $handlers = [];
+    private array $handlers = [];
 
     /**
      * Возвращает обработчик для указанной спецификации.
      *
-     * @param Specification      $specification      Спецификация, для которой запрашивает
-     *                                               разработчик.
-     * @param array<int, string> $requiredInterfaces Список дополнительных интерфейсов, которые
-     *                                               должен поддерживать обработчик.
+     * @param Specification      $specification      Спецификация, для которой запрашивает разработчик.
+     * @param array<int, string> $requiredInterfaces Список дополнительных интерфейсов, которые должен поддерживать
+     *                                               обработчик.
      *
      * @return Handler
      *

@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Exception\Handler\UnsupportedSpecificationException
  */
-class UnsupportedSpecificationExceptionTest extends TestCase
+final class UnsupportedSpecificationExceptionTest extends TestCase
 {
     /**
      * Проверяет правильность создания исключения.

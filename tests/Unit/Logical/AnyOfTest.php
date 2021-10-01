@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Logical\AnyOf
  */
-class AnyOfTest extends TestCase
+final class AnyOfTest extends TestCase
 {
     /**
      * Проверяет что конструктор принимает только объекты.

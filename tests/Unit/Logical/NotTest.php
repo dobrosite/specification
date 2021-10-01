@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Logical\Not
  */
-class NotTest extends TestCase
+final class NotTest extends TestCase
 {
     /**
      * Проверяет что спецификация не удовлетворена, если удовлетворена вложенная спецификация.

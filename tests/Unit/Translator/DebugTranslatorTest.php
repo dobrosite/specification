@@ -16,14 +16,12 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Translator\DebugTranslator
  */
-class DebugTranslatorTest extends TestCase
+final class DebugTranslatorTest extends TestCase
 {
     /**
      * Проверяемый транслятор.
-     *
-     * @var DebugTranslator
      */
-    private $translator;
+    private DebugTranslator $translator;
 
     /**
      * Проверяет составную спецификацию.

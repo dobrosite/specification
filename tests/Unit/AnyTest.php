@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \DobroSite\Specification\Any
  */
-class AnyTest extends TestCase
+final class AnyTest extends TestCase
 {
     /**
      * Проверяет что для спецификация всегда удовлетворена.

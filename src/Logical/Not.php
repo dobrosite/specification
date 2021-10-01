@@ -21,7 +21,7 @@ class Not implements CompositeSpecification
      *
      * @var Specification
      */
-    private $specification;
+    private Specification $specification;
 
     /**
      * Создаёт спецификацию.
