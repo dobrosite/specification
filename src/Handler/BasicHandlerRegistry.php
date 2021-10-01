@@ -53,7 +53,7 @@ class BasicHandlerRegistry implements HandlerRegistry
         //      обработчиков.
 
         foreach ($this->handlers[$group] as $handler) {
-            $actualInterfaces = class_implements($handler, false);
+            $actualInterfaces = (array) class_implements($handler, false);
             $implementedInterfaces = array_intersect($requiredInterfaces, $actualInterfaces);
             if (count($implementedInterfaces) === count($requiredInterfaces)) {
                 return $handler;

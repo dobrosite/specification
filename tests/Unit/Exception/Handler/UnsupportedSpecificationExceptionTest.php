@@ -36,12 +36,6 @@ final class UnsupportedSpecificationExceptionTest extends TestCase
             preg_quote(SimpleString::class, '/')
         );
 
-        if (method_exists(self::class, 'assertMatchesRegularExpression')) {
-            // @phpstan-ignore-next-line
-            self::assertMatchesRegularExpression($regexp, $exception->getMessage());
-        } else {
-            // TODO Удалить ветку после перехода на PHPUnit 9.0.
-            self::assertRegExp($regexp, $exception->getMessage());
-        }
+        self::assertMatchesRegularExpression($regexp, $exception->getMessage());
     }
 }
