@@ -23,7 +23,7 @@ namespace DobroSite\Specification;
  * Здесь метод `createSpecification` может вернуть экземпляр `Any`, если он не хочет добавлять
  * никаких условий.
  *
- * @since x.x
+ * @since 2.4
  */
 class Any implements Specification
 {

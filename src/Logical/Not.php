@@ -10,7 +10,7 @@ use DobroSite\Specification\Specification;
 /**
  * Спецификация «НЕ».
  *
- * @since x.x Класс больше не является окончательным.
+ * @since 2.2 Класс больше не является окончательным.
  * @since 2.0 Перемещено в пространство Logical.
  * @since 1.0
  */

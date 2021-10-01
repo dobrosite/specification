@@ -25,7 +25,7 @@ interface Translator
      * @throws NoMatchingHandlerException
      * @throws UnsatisfiableSpecificationException
      *
-     * @since x.x Может выбрасывать исключение NoMatchingHandlerException.
+     * @since 2.2 Может выбрасывать исключение NoMatchingHandlerException.
      * @since 2.0
      */
     public function translate(Specification $specification): string;
